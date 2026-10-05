@@ -156,20 +156,22 @@ export function FreeKeyModal() {
         </button>
       </DialogTrigger>
 
-      <DialogContent className="wow-card border-gold-dim/30 sm:max-w-lg">
+      <DialogContent className="overflow-hidden border-white/10 bg-[#121a28] p-0 shadow-[0_24px_60px_rgba(0,0,0,0.45)] sm:max-w-lg">
+        <div className="h-1 bg-gradient-to-r from-[#7eb6ff] to-[#e4b15a]" />
+        <div className="p-6">
         <DialogHeader>
-          <DialogTitle className="font-[var(--font-cinzel)] text-lg tracking-wide text-gold-bright">
+          <DialogTitle className="font-display text-lg text-white">
             Free Lifetime Keys
           </DialogTitle>
-          <DialogDescription className="text-muted-foreground">
+          <DialogDescription className="text-white/60">
             Enter your BattleTag, then download whichever guides you want.
             Everything runs locally in your browser.
           </DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-4 pt-2">
+        <div className="space-y-4 pt-4">
           <div className="space-y-1.5">
-            <Label htmlFor="free-tag" className="text-xs font-medium text-gold-dim">
+            <Label htmlFor="free-tag" className="text-xs font-medium text-[#a9c9ff]">
               Your BattleTag
             </Label>
             <Input
@@ -180,8 +182,8 @@ export function FreeKeyModal() {
               className="wow-input"
               autoFocus
             />
-            <Alert className="border-gold-dim/20 bg-gold-dim/5">
-              <AlertDescription className="text-xs text-gold-dim">
+            <Alert className="border-[#7eb6ff]/25 bg-[#7eb6ff]/10">
+              <AlertDescription className="text-xs text-[#c5d9ff]">
                 RestedXP guides are encrypted to a specific BattleTag. The generated
                 file will only work with the BattleTag you enter here.
               </AlertDescription>
@@ -203,7 +205,7 @@ export function FreeKeyModal() {
               return (
                 <div
                   key={guide.id}
-                  className="flex items-center justify-between gap-3 rounded-md border border-gold-dim/15 bg-black/20 px-3 py-2.5"
+                  className="flex items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/4 px-3 py-2.5"
                 >
                   <div className="min-w-0">
                     <p className="text-sm font-medium text-foreground truncate">
@@ -220,7 +222,7 @@ export function FreeKeyModal() {
                     className={`flex shrink-0 items-center gap-1.5 rounded-md px-3 py-1.5 text-xs font-semibold cursor-pointer transition-all ${
                       done
                         ? "border border-green-500/30 bg-green-500/10 text-green-400"
-                        : "wow-btn-gold"
+                        : "border border-[#7eb6ff]/40 bg-[#7eb6ff]/15 text-[#c5d9ff] hover:bg-[#7eb6ff]/25"
                     }`}
                   >
                     {loading ? (
@@ -248,14 +250,15 @@ export function FreeKeyModal() {
           <button
             onClick={handleDownloadAll}
             disabled={!tagValid || !!processing || allDone}
-            className="wow-btn-gold w-full rounded-md px-4 py-2.5 text-sm cursor-pointer"
+            className="wow-btn-free w-full rounded-xl px-4 py-2.5 text-sm cursor-pointer"
           >
             {allDone ? "All Guides Downloaded" : "Download All Guides"}
           </button>
 
-          <p className="text-center text-[11px] text-muted-foreground/50">
+          <p className="text-center text-[11px] text-white/40">
             Your BattleTag never leaves your machine.
           </p>
+        </div>
         </div>
       </DialogContent>
     </Dialog>

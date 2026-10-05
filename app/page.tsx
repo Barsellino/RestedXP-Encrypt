@@ -60,75 +60,29 @@ function UsersIcon({ className }: { className?: string }) {
 export default function Home() {
   return (
     <div className="relative min-h-screen">
-      {/* Hero background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url(/bg-midnight.jpg)" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/85 to-[#090d15]" />
-      </div>
-
-      {/* Leather texture overlay */}
-      <div
-        className="absolute inset-0 opacity-30 mix-blend-overlay"
-        style={{
-          backgroundImage: "url(/bg-leather.jpg)",
-          backgroundSize: "600px",
-        }}
-      />
-
-      {/* Content */}
       <main className="relative z-10 flex flex-col items-center px-4 py-12 md:py-20">
-        {/* Page header */}
-        <header className="mb-8 text-center">
-          <div className="flex items-center justify-center gap-4 md:gap-6">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/horde-logo.png"
-              alt="Horde"
-              className="h-16 w-auto opacity-80 drop-shadow-[0_0_8px_rgba(200,30,30,0.3)] md:h-20"
-            />
-            <div>
-              <h1 className="font-[var(--font-cinzel)] text-2xl font-bold tracking-wide text-gold-bright md:text-4xl">
-                RestedXP Re-Encrypt
-              </h1>
-              <p className="mt-1 text-sm text-muted-foreground">
-                Free lifetime keys for{" "}
-                <span className="font-medium text-foreground">
-                  WoW Leveling Guides
-                </span>
-              </p>
-              <p className="mt-0.5 text-xs text-muted-foreground/50">
-                For Horde &amp; Alliance — because addons must be free.
-              </p>
-            </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/alliance-logo.png"
-              alt="Alliance"
-              className="h-16 w-auto opacity-80 drop-shadow-[0_0_8px_rgba(30,80,200,0.3)] md:h-20"
-            />
-          </div>
+        <header className="mb-10 text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.22em] text-gold">
+            BlackBears Int
+          </p>
+          <h1 className="font-display bg-gradient-to-br from-white to-[#7eb6ff] bg-clip-text text-3xl font-bold text-transparent md:text-5xl">
+            RestedXP Re-Encrypt
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-base text-white/80">
+            Free lifetime keys for WoW leveling guides.
+          </p>
+          <p className="mt-1 text-sm text-white/45">
+            For Horde and Alliance — because addons must be free.
+          </p>
         </header>
 
         {/* Available guides */}
-        <div className="mb-6 w-full max-w-3xl grid gap-3 md:grid-cols-3">
+        <div className="mb-6 w-full max-w-3xl grid gap-3 md:grid-cols-2">
           {GUIDES.map((guide) => (
-            <div key={guide.id} className="wow-card relative overflow-hidden rounded-lg">
-              {/* Expansion key art */}
-              <div className="relative h-32">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={guide.image}
-                  alt={guide.expansion}
-                  className="absolute inset-0 h-full w-full object-cover object-top"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/60 to-transparent" />
-              </div>
-              {/* Info */}
-              <div className="relative -mt-6 px-4 pb-4">
-                <h3 className="font-[var(--font-cinzel)] text-sm font-semibold tracking-wide text-gold-bright">
+            <div key={guide.id} className="wow-card relative overflow-hidden rounded-xl">
+              <div className="h-1 bg-gradient-to-r from-[#7eb6ff] to-[#e4b15a]" />
+              <div className="px-4 py-4">
+                <h3 className="font-display text-sm font-semibold tracking-wide text-white">
                   {guide.title}
                 </h3>
                 <p className="mt-0.5 text-xs text-muted-foreground">
@@ -157,7 +111,7 @@ export default function Home() {
 
         {/* Why section */}
         <section className="mt-12 w-full max-w-2xl space-y-6">
-          <h2 className="font-[var(--font-cinzel)] text-center text-lg tracking-wide text-gold">
+          <h2 className="font-display text-center text-lg text-white">
             Why This Tool Exists
           </h2>
 
@@ -170,8 +124,8 @@ export default function Home() {
 
           <div className="grid gap-4 md:grid-cols-3">
             {/* Card 1 */}
-            <div className="wow-card rounded-lg p-4">
-              <ShieldIcon className="mb-2 h-5 w-5 text-gold-dim" />
+            <div className="wow-card rounded-xl p-4">
+              <ShieldIcon className="mb-2 h-5 w-5 text-[#7eb6ff]" />
               <h3 className="mb-1 text-sm font-semibold text-foreground">
                 Blizzard&apos;s Rules Are Clear
               </h3>
@@ -183,8 +137,8 @@ export default function Home() {
             </div>
 
             {/* Card 2 */}
-            <div className="wow-card rounded-lg p-4">
-              <UsersIcon className="mb-2 h-5 w-5 text-gold-dim" />
+            <div className="wow-card rounded-xl p-4">
+              <UsersIcon className="mb-2 h-5 w-5 text-[#7eb6ff]" />
               <h3 className="mb-1 text-sm font-semibold text-foreground">
                 Share With Your Guild
               </h3>
@@ -195,8 +149,8 @@ export default function Home() {
             </div>
 
             {/* Card 3 */}
-            <div className="wow-card rounded-lg p-4">
-              <ScaleIcon className="mb-2 h-5 w-5 text-gold-dim" />
+            <div className="wow-card rounded-xl p-4">
+              <ScaleIcon className="mb-2 h-5 w-5 text-[#e4b15a]" />
               <h3 className="mb-1 text-sm font-semibold text-foreground">
                 Not Piracy
               </h3>
@@ -216,31 +170,10 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-12 space-y-2 text-center text-xs text-muted-foreground/50">
-          <p>
-            Made by{" "}
-            <a
-              href="https://github.com/mkccl"
-              className="text-gold-dim/70 transition-colors hover:text-gold"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ccl
-            </a>
-            {" · "}
-            <a
-              href="https://github.com/mkccl"
-              className="text-gold-dim/70 transition-colors hover:text-gold"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open source on GitHub
-            </a>
-          </p>
+        <footer className="mt-12 text-center text-xs text-muted-foreground/50">
           <p className="text-[10px] text-muted-foreground/30">
             World of Warcraft and Blizzard Entertainment are trademarks of
-            Blizzard Entertainment, Inc. Background imagery used under
-            Blizzard&apos;s fan site policy for non-commercial purposes.
+            Blizzard Entertainment, Inc.
           </p>
         </footer>
       </main>

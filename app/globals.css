@@ -7,8 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope);
+  --font-mono: var(--font-manrope);
+  --font-display: var(--font-unbounded);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -38,9 +39,10 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --color-gold: #d4a017;
-  --color-gold-bright: #ffb100;
-  --color-gold-dim: #8b6914;
+  --color-gold: #e4b15a;
+  --color-gold-bright: #ffd978;
+  --color-gold-dim: #c4892e;
+  --color-accent-blue: #7eb6ff;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -50,40 +52,40 @@
   --radius-4xl: calc(var(--radius) + 16px);
 }
 
-/* Warcraft dark theme — always on */
+/* BlackBears Int — ink, brass, championship blue */
 :root {
-  --radius: 0.5rem;
-  --background: #090d15;
-  --foreground: #e8dcc8;
-  --card: #111827;
-  --card-foreground: #e8dcc8;
-  --popover: #111827;
-  --popover-foreground: #e8dcc8;
-  --primary: #d4a017;
-  --primary-foreground: #0a0e17;
-  --secondary: #1e2433;
-  --secondary-foreground: #e8dcc8;
-  --muted: #1a2030;
-  --muted-foreground: #8b7e6a;
-  --accent: #1e2a3a;
-  --accent-foreground: #e8dcc8;
-  --destructive: #c41e3a;
-  --border: #2a2215;
-  --input: #1a2030;
-  --ring: #d4a017;
-  --chart-1: #d4a017;
-  --chart-2: #4ade80;
-  --chart-3: #60a5fa;
-  --chart-4: #c084fc;
-  --chart-5: #fb923c;
-  --sidebar: #111827;
-  --sidebar-foreground: #e8dcc8;
-  --sidebar-primary: #d4a017;
-  --sidebar-primary-foreground: #0a0e17;
-  --sidebar-accent: #1e2433;
-  --sidebar-accent-foreground: #e8dcc8;
-  --sidebar-border: #2a2215;
-  --sidebar-ring: #d4a017;
+  --radius: 0.75rem;
+  --background: #0c121c;
+  --foreground: #e2e6ee;
+  --card: #151d2b;
+  --card-foreground: #e2e6ee;
+  --popover: #151d2b;
+  --popover-foreground: #e2e6ee;
+  --primary: #7eb6ff;
+  --primary-foreground: #05080e;
+  --secondary: #1e334c;
+  --secondary-foreground: #e2e6ee;
+  --muted: #151d2b;
+  --muted-foreground: #aeb8c8;
+  --accent: #1e334c;
+  --accent-foreground: #e2e6ee;
+  --destructive: #ff4757;
+  --border: rgba(226, 230, 238, 0.12);
+  --input: #070b12;
+  --ring: #7eb6ff;
+  --chart-1: #7eb6ff;
+  --chart-2: #e4b15a;
+  --chart-3: #ffd978;
+  --chart-4: #7ec8c0;
+  --chart-5: #e08a3c;
+  --sidebar: #151d2b;
+  --sidebar-foreground: #e2e6ee;
+  --sidebar-primary: #7eb6ff;
+  --sidebar-primary-foreground: #05080e;
+  --sidebar-accent: #1e334c;
+  --sidebar-accent-foreground: #e2e6ee;
+  --sidebar-border: rgba(226, 230, 238, 0.12);
+  --sidebar-ring: #7eb6ff;
 }
 
 @layer base {
@@ -95,114 +97,91 @@
   }
 }
 
-/* WoW-inspired background */
 body {
+  font-family: var(--font-manrope), "Manrope", sans-serif;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(212, 160, 23, 0.06) 0%, transparent 60%),
-    radial-gradient(ellipse at 50% 100%, rgba(30, 20, 60, 0.4) 0%, transparent 60%),
-    #090d15;
+    radial-gradient(circle at 50% 0%, rgba(228, 177, 90, 0.14) 0%, transparent 42%),
+    radial-gradient(circle at 80% 20%, rgba(126, 182, 255, 0.12) 0%, transparent 36%),
+    #0c121c;
   min-height: 100vh;
+  color: #e2e6ee;
 }
 
-/* Gold border glow for the main card */
+.font-display {
+  font-family: var(--font-unbounded), "Unbounded", sans-serif;
+}
+
 .wow-card {
-  border: 1px solid #3d301880;
-  box-shadow:
-    0 0 0 1px rgba(212, 160, 23, 0.1),
-    0 0 30px -5px rgba(212, 160, 23, 0.08),
-    0 4px 40px -8px rgba(0, 0, 0, 0.6);
-  background: linear-gradient(180deg, #111827 0%, #0f1420 100%);
+  border: 1px solid rgba(226, 230, 238, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(10px);
 }
 
-/* Gold gradient button */
 .wow-btn-gold {
-  background: linear-gradient(180deg, #e8b828 0%, #c49212 50%, #a07810 100%);
-  color: #1a0f00;
+  background: linear-gradient(135deg, #ffd978 0%, #e4b15a 55%, #c4892e 100%);
+  color: #070b12;
   font-weight: 700;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
-  border: 1px solid #8b6914;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 230, 120, 0.35),
-    0 2px 8px rgba(0, 0, 0, 0.4);
-  transition: all 0.15s ease;
+  border: 1px solid rgba(255, 217, 120, 0.4);
+  box-shadow: 0 8px 22px rgba(228, 177, 90, 0.22);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .wow-btn-gold:hover:not(:disabled) {
-  background: linear-gradient(180deg, #f0c838 0%, #d4a017 50%, #b08818 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 230, 120, 0.5),
-    0 0 16px rgba(212, 160, 23, 0.3),
-    0 2px 8px rgba(0, 0, 0, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgba(228, 177, 90, 0.32);
 }
 
 .wow-btn-gold:disabled {
   opacity: 0.4;
-  filter: saturate(0.3);
 }
 
-/* Drop zone styling */
 .wow-dropzone {
-  border: 2px dashed #3d301850;
-  background: #0c101a;
-  transition: all 0.2s ease;
+  border: 1px dashed rgba(226, 230, 238, 0.2);
+  background: rgba(7, 11, 18, 0.55);
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .wow-dropzone:hover {
-  border-color: #d4a01740;
-  background: #0e1220;
+  border-color: rgba(126, 182, 255, 0.45);
+  background: rgba(126, 182, 255, 0.06);
 }
 
 .wow-dropzone-active {
-  border-color: #d4a017 !important;
-  background: rgba(212, 160, 23, 0.05) !important;
-  box-shadow: 0 0 20px rgba(212, 160, 23, 0.1);
+  border-color: #7eb6ff !important;
+  background: rgba(126, 182, 255, 0.1) !important;
 }
 
 .wow-dropzone-done {
-  border-color: #4ade8060;
-  background: rgba(74, 222, 128, 0.03);
+  border-color: rgba(126, 200, 192, 0.6);
+  background: rgba(126, 200, 192, 0.06);
 }
 
-/* Warcraft-style inputs */
 .wow-input {
-  background: #0c101a !important;
-  border-color: #2a221580 !important;
-  color: #e8dcc8 !important;
-  transition: all 0.15s ease;
+  background: #070b12 !important;
+  border-color: rgba(226, 230, 238, 0.14) !important;
+  color: #e2e6ee !important;
 }
 
 .wow-input:focus {
-  border-color: #d4a01780 !important;
-  box-shadow: 0 0 0 1px rgba(212, 160, 23, 0.2), 0 0 12px rgba(212, 160, 23, 0.08) !important;
+  border-color: rgba(126, 182, 255, 0.7) !important;
+  box-shadow: 0 0 0 3px rgba(126, 182, 255, 0.16) !important;
 }
 
 .wow-input::placeholder {
-  color: #5a5040 !important;
+  color: rgba(226, 230, 238, 0.35) !important;
 }
 
-/* Free key CTA button — green glow */
 .wow-btn-free {
-  background: linear-gradient(180deg, #34d058 0%, #28a745 50%, #1e7e34 100%);
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  border: 1px solid #1e7e34;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    0 0 20px rgba(52, 208, 88, 0.15),
-    0 2px 8px rgba(0, 0, 0, 0.4);
-  transition: all 0.2s ease;
+  background: linear-gradient(135deg, #a9c9ff 0%, #7eb6ff 45%, #4c82d6 100%);
+  color: #05080e;
+  font-weight: 700;
+  border: 1px solid rgba(197, 217, 255, 0.45);
+  box-shadow: 0 8px 24px rgba(126, 182, 255, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .wow-btn-free:hover {
-  background: linear-gradient(180deg, #3ee066 0%, #34d058 50%, #28a745 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    0 0 30px rgba(52, 208, 88, 0.25),
-    0 2px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* Title font */
-.font-wow {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.03em;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 30px rgba(126, 182, 255, 0.38);
 }

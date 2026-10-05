@@ -124,7 +124,7 @@ export function ReEncryptCard() {
         <div className="flex items-center gap-3">
           <SwordsIcon className="h-7 w-7 text-gold shrink-0" />
           <div>
-            <CardTitle className="font-[var(--font-cinzel)] text-xl tracking-wide text-gold-bright">
+            <CardTitle className="font-display text-xl tracking-wide text-gold-bright">
               RestedXP Re-Encrypt
             </CardTitle>
             <CardDescription className="mt-1 text-muted-foreground">
